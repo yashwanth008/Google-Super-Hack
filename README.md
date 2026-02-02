@@ -1,15 +1,14 @@
-# 🏀 Ref Zero - AI-Powered Sports Referee Assistant
+# Ref Zero - AI-Powered Sports Referee Assistant
 
 <div align="center">
 
-![Ref Zero Banner](https://via.placeholder.com/1200x300/1a1a1a/00ff00?text=REF+ZERO+-+AI+REFEREE+SYSTEM)
+
 
 **The world's first AI referee that analyzes plays in real-time and cites the official rulebook.**
 
-[🎥 Watch Demo](#demo) | [🚀 Quick Start](#quick-start) | [📖 Documentation](#how-it-works) | [🏆 Hackathon](#built-for-cerebral-valley-hackathon)
+[ Watch Demo](#demo) | [ Quick Start](#quick-start) | [Documentation](#how-it-works) | [ Hackathon](#built-for-cerebral-valley-hackathon)
 
 [![Gemini 3.0](https://img.shields.io/badge/Gemini-2.0%20Flash-4285F4?logo=google)](https://ai.google.dev/)
-[![Browser Use](https://img.shields.io/badge/Browser-Use-FF6B6B?logo=playwright)](https://github.com/browser-use/browser-use)
 [![LiveKit](https://img.shields.io/badge/LiveKit-Enabled-00D9FF?logo=webrtc)](https://livekit.io/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
@@ -17,28 +16,28 @@
 
 ---
 
-## 🎯 The Problem
+##  The Problem
 
 Every year, **controversial referee calls** cost teams championships, millions in revenue, and fans' trust:
 
-- 🏈 **NFL**: 450+ officials, 256 games, split-second decisions
-- 🏀 **NBA**: Missed calls swing playoff games
-- ⚽ **Soccer**: VAR exists, but still relies on human interpretation
-- 🎓 **Youth Sports**: 90% of games have NO video review capability
+- **NFL**: 450+ officials, 256 games, split-second decisions
+- **NBA**: Missed calls swing playoff games
+- **Soccer**: VAR exists, but still relies on human interpretation
+- **Youth Sports**: 90% of games have NO video review capability
 
 **The bigger issue?** Even with video replay, refs must:
-1. ⏱️ Stop the game for 2-5 minutes
-2. 👁️ Watch footage frame-by-frame manually
-3. 📚 Recall rules from a 200+ page rulebook
-4. 🤷 Make judgment calls under pressure
+1.  Stop the game for 2-5 minutes
+2.  Watch footage frame-by-frame manually
+3.  Recall rules from a 200+ page rulebook
+4.  Make judgment calls under pressure
 
 ---
 
-## 💡 Our Solution
+##  Our Solution
 
 **Ref Zero** is an AI assistant that gives every referee superhuman capabilities:
 ```
-📹 Live Video Stream  →  🤖 AI Analysis  →  📖 Rule Verification  →  ⚖️ Instant Verdict
+ Live Video Stream  →   AI Analysis  →   Rule Verification  →   Instant Verdict
     (5 seconds)            (Gemini 3.0)      (Browser Agent)         (JSON Output)
 ```
 
@@ -46,18 +45,18 @@ Every year, **controversial referee calls** cost teams championships, millions i
 
 | Feature | Technology | What It Does |
 |---------|-----------|--------------|
-| **🎥 Smart DVR** | OpenCV + Custom Buffer | Automatically captures critical 5-second clips |
-| **🦴 Pose Detection** | MediaPipe | Tracks player movements in real-time |
-| **🧠 AI Referee** | Gemini 3.0 Flash | Analyzes plays frame-by-frame, cites rules |
-| **🌐 Rule Verification** | Browser-use Agent | Autonomously looks up official rulebook citations |
-| **⚡ Real-time Streaming** | LiveKit + WebSockets | <100ms latency video analysis |
+| ** Smart DVR** | OpenCV + Custom Buffer | Automatically captures critical 5-second clips |
+| ** Pose Detection** | MediaPipe | Tracks player movements in real-time |
+| ** AI Referee** | Gemini 3.0 Flash | Analyzes plays frame-by-frame, cites rules |
+| ** Rule Verification** | Browser-use Agent | Autonomously looks up official rulebook citations |
+| ** Real-time Streaming** | LiveKit + WebSockets | <100ms latency video analysis |
 
 ---
 
-## 🎬 Demo
+##  Demo
 
 ### Watch It In Action
-[📺 **3-Minute Demo Video**](YOUR_DEMO_LINK_HERE)
+[ **3-Minute Demo Video**](YOUR_DEMO_LINK_HERE)
 
 ### Example Output
 
@@ -77,7 +76,7 @@ Every year, **controversial referee calls** cost teams championships, millions i
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 - Python 3.11+
@@ -87,7 +86,7 @@ Every year, **controversial referee calls** cost teams championships, millions i
 ### Installation
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/ref-zero.git
+git clone https://github.com/yashwanth008/Google-Super-Hack.git
 cd ref-zero
 
 # 2. Backend Setup
@@ -123,34 +122,60 @@ npm run dev
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                        FRONTEND                              │
-│  React + WebSocket Client + LiveKit Room                    │
-└────────────────┬────────────────────────────────────────────┘
-                 │
-                 ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    FASTAPI BACKEND                           │
-│                                                              │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
-│  │  WebSocket   │  │  Smart DVR   │  │ REST API     │      │
-│  │  Handler     │──│  Buffer      │──│ Endpoints    │      │
-│  └──────────────┘  └──────────────┘  └──────────────┘      │
-│                                                              │
-└────────┬──────────────────┬──────────────────┬──────────────┘
-         │                  │                  │
-         ▼                  ▼                  ▼
-┌────────────────┐ ┌────────────────┐ ┌────────────────┐
-│   MediaPipe    │ │  Gemini 3.0    │ │  Browser-use   │
-│ Pose Detection │ │  Flash Vision  │ │     Agent      │
-│                │ │                │ │                │
-│ • Tracks 33    │ │ • Analyzes     │ │ • Opens Chrome │
-│   keypoints    │ │   video clips  │ │ • Searches web │
-│ • 30 FPS       │ │ • Returns JSON │ │ • Finds rules  │
-│ • Real-time    │ │ • Cites rules  │ │ • Validates    │
-└────────────────┘ └────────────────┘ └────────────────┘
+┌─────────────────────────────────────────────────────────────────────┐
+│                         REF ZERO ARCHITECTURE                        │
+└─────────────────────────────────────────────────────────────────────┘
+
+                          LIVE CAMERA FEEDS
+                                  │
+                                  ▼
+                    ┌─────────────────────────┐
+                    │  COMPUTER VISION LAYER  │
+                    │  OpenCV + MediaPipe     │
+                    │  • 33 keypoints/player  │
+                    │  • 30 FPS tracking      │
+                    │  • Contact detection    │
+                    └─────────────────────────┘
+                                  │
+                                  ▼
+                    ┌─────────────────────────┐
+                    │     SMART DVR BUFFER    │
+                    │  • Rolling 5-sec buffer │
+                    │  • Auto-capture clips   │
+                    │  • Frame buffering      │
+                    └─────────────────────────┘
+                                  │
+                                  ▼
+                    ┌─────────────────────────┐
+                    │   GEMINI 3 FLASH        │
+                    │  • Frame analysis       │
+                    │  • Evidence extraction  │
+                    │  • Rule verification    │
+                    │  • 150 frames in 2 sec  │
+                    └─────────────────────────┘
+                                  │
+                                  ▼
+        ┌───────────────────────────────────────────────┐
+        │         LIVEKIT AGENT DEBATE SYSTEM           │
+        │                                               │
+        │  ┌─────────┐  ┌─────────┐  ┌─────────┐      │
+        │  │ AGENT 1 │  │ AGENT 2 │  │ AGENT 3 │      │
+        │  │Prosecutor│  │ Defense │  │  Judge  │      │
+        │  └─────────┘  └─────────┘  └─────────┘      │
+        │       │            │            │            │
+        │       └────────────┼────────────┘            │
+        │                    │                         │
+        └────────────────────┼─────────────────────────┘
+                             │
+                             ▼
+                    ┌─────────────────────────┐
+                    │   CONSENSUS ENGINE      │
+                    │  • 94% confidence       │
+                    │  • 5.3 seconds total    │
+                    │  • Final verdict        │
+                    └─────────────────────────┘
 ```
 
 ---
@@ -175,7 +200,7 @@ npm run dev
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 ```
 ref-zero/
 ├── backend/
@@ -197,9 +222,9 @@ ref-zero/
 
 ---
 
-## 🧪 How It Works
+##  How It Works
 
-### 1️⃣ **Real-Time Pose Detection**
+###  **Real-Time Pose Detection**
 ```python
 # MediaPipe tracks 33 body landmarks at 30 FPS
 result = landmarker.detect_for_video(frame, timestamp_ms)
@@ -209,7 +234,7 @@ if wrist.y < nose.y:
     action_detected = True
 ```
 
-### 2️⃣ **Smart DVR Buffer**
+###  **Smart DVR Buffer**
 ```python
 # Keeps rolling 5-second buffer (150 frames)
 dvr.write_frame(current_frame)
@@ -218,7 +243,7 @@ dvr.write_frame(current_frame)
 clip_path = dvr.save_last_clip()  # → "clip_1738368000.mp4"
 ```
 
-### 3️⃣ **Gemini AI Analysis**
+###  **Gemini AI Analysis**
 ```python
 # Upload clip to Gemini
 video_file = genai.upload_file(clip_path)
@@ -238,7 +263,7 @@ response = model.generate_content([
 ])
 ```
 
-### 4️⃣ **Browser Agent Verification**
+###  **Browser Agent Verification**
 ```python
 # Autonomous web search for rule text
 agent = Agent(
@@ -252,26 +277,26 @@ result = await agent.run()  # Opens browser, searches, extracts
 
 ---
 
-## 🎯 Use Cases
+##  Use Cases
 
 ### Professional Sports
-- ✅ **Instant VAR decisions** - Reduce 5-minute reviews to 10 seconds
-- ✅ **Training tool** - New refs learn from AI explanations
-- ✅ **Post-game analysis** - Automatic foul reports
+-  **Instant VAR decisions** - Reduce 5-minute reviews to 10 seconds
+-  **Training tool** - New refs learn from AI explanations
+-  **Post-game analysis** - Automatic foul reports
 
 ### Youth & Amateur Sports
-- ✅ **Level the playing field** - AI refereeing for leagues without pro refs
-- ✅ **Parent disputes** - Objective rulings reduce conflicts
-- ✅ **Safety monitoring** - Detect dangerous plays automatically
+-  **Level the playing field** - AI refereeing for leagues without pro refs
+-  **Parent disputes** - Objective rulings reduce conflicts
+-  **Safety monitoring** - Detect dangerous plays automatically
 
 ### Sports Analytics
-- ✅ **Performance tracking** - Which players commit most fouls?
-- ✅ **Rule trends** - Which rules are most violated?
-- ✅ **Broadcast enhancement** - Real-time foul explanations for viewers
+-  **Performance tracking** - Which players commit most fouls?
+-  **Rule trends** - Which rules are most violated?
+-  **Broadcast enhancement** - Real-time foul explanations for viewers
 
 ---
 
-## 📊 Performance Metrics
+##  Performance Metrics
 
 | Metric | Value | Notes |
 |--------|-------|-------|
@@ -285,9 +310,9 @@ result = await agent.run()  # Opens browser, searches, extracts
 
 ---
 
-## 🗺️ Roadmap
+##  Roadmap
 
-### Phase 1: MVP ✅ (Current)
+### Phase 1: MVP  (Current)
 - [x] Real-time pose detection
 - [x] Gemini video analysis
 - [x] Browser agent verification
@@ -313,7 +338,7 @@ result = await agent.run()  # Opens browser, searches, extracts
 
 ---
 
-## 💰 Market Opportunity
+##  Market Opportunity
 
 ### Target Market
 - **450,000+** registered sports officials in the US
@@ -328,14 +353,14 @@ result = await agent.run()  # Opens browser, searches, extracts
 
 ---
 
-## 🏆 Built for Cerebral Valley Hackathon
+##  Built for Cerebral Valley Hackathon
 
 ### Prize Categories We're Targeting
-- 🥇 **Gemini Track (1st-3rd Place)** - Core multimodal AI innovation
-- 🤖 **Agentic Workflow Prize** - Multi-agent coordination (pose → Gemini → browser)
-- 🌐 **Best use of Browser-use** - Autonomous rulebook verification
-- 📡 **Best use of LiveKit** - Real-time video infrastructure
-- 👁️ **Best Vision Agents** - Pose detection + video analysis pipeline
+-  **Gemini Track (1st-3rd Place)** - Core multimodal AI innovation
+-  **Agentic Workflow Prize** - Multi-agent coordination (pose → Gemini → browser)
+-  **Best use of Browser-use** - Autonomous rulebook verification
+-  **Best use of LiveKit** - Real-time video infrastructure
+-  **Best Vision Agents** - Pose detection + video analysis pipeline
 
 ### Why Ref Zero Wins
 1. **Impact**: Solves real problems for 450k+ professionals
@@ -345,7 +370,7 @@ result = await agent.run()  # Opens browser, searches, extracts
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 We welcome contributions! Here's how:
 ```bash
@@ -371,7 +396,7 @@ git push origin feature/amazing-feature
 
 ---
 
-## 📝 License
+##  License
 
 This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
 
